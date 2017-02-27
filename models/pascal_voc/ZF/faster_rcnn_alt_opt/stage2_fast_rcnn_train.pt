@@ -244,7 +244,7 @@ layer {
   param { lr_mult: 1.0 }
   param { lr_mult: 2.0 }
   inner_product_param {
-    num_output: 21
+    num_output: 3
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -263,7 +263,7 @@ layer {
   param { lr_mult: 1.0 }
   param { lr_mult: 2.0 }
   inner_product_param {
-    num_output: 84
+    num_output: 28
     weight_filler {
       type: "gaussian"
       std: 0.001

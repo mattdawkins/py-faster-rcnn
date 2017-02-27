@@ -13,6 +13,12 @@ from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 import numpy as np
 
+from datasets.june import june
+june_devkit_path = '/home/matt/Dev/viame/src/packages/py-faster-rcnn/data/JUNE_devkit'
+for split in ['train', 'test']:
+    name = '{}_{}'.format('june', split)
+    __sets[name] = (lambda split=split: june(split, june_devkit_path))
+
 # Set up voc_<year>_<split> using selective search "fast" mode
 for year in ['2007', '2012']:
     for split in ['train', 'val', 'trainval', 'test']:
