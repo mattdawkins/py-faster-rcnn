@@ -606,10 +606,10 @@ layer {
   }
 }
 layer {
-  name: "cls_score_b"
+  name: "cls_score_alt"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "cls_score_b"
+  top: "cls_score_alt"
   param {
     lr_mult: 1
   }
@@ -629,10 +629,10 @@ layer {
   }
 }
 layer {
-  name: "bbox_pred_b"
+  name: "bbox_pred_alt"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "bbox_pred_b"
+  top: "bbox_pred_alt"
   param {
     lr_mult: 1
   }
@@ -654,7 +654,7 @@ layer {
 layer {
   name: "loss_cls"
   type: "SoftmaxWithLoss"
-  bottom: "cls_score_b"
+  bottom: "cls_score_alt"
   bottom: "labels"
   propagate_down: 1
   propagate_down: 0
@@ -664,7 +664,7 @@ layer {
 layer {
   name: "loss_bbox"
   type: "SmoothL1Loss"
-  bottom: "bbox_pred_b"
+  bottom: "bbox_pred_alt"
   bottom: "bbox_targets"
   bottom: "bbox_inside_weights"
   bottom: "bbox_outside_weights"
