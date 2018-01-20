@@ -1,4 +1,5 @@
 caffe-fast-rcnn
+output
 *.pyc
 .ipynb_checkpoints
 lib/build
